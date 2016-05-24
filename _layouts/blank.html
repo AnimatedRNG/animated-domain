@@ -2,26 +2,43 @@
 <html>
   <head>
     <!-- Niklas Buschmann 2015 MIT <http://github.com/niklasbuschmann> -->
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ site.url }}/icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="{{ site.url }}/icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ site.url }}/icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ site.url }}/icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ site.url }}/icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="{{ site.url }}/icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="{{ site.url }}/icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ site.url }}/icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ site.url }}/icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{{ site.url }}/icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ site.url }}/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ site.url }}/icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ site.url }}/icon/favicon-16x16.png">
+    <link rel="manifest" href="icon/manifest.json">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="{{ site.encoding }}">
     {% if page.author %}<meta name="author" content="{{ page.author }}">{% endif %}
     <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-    <title>{% if page.title %} {{ page.title }} › {% endif %}{{ site.title }}</title>
+    <title>{% if page.title %} {{ page.title }} › {% endif %}{{ site.condensed_title }}</title>
     <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url}}">
     <link href="{{ "/main.css" | prepend: site.baseurl }}" rel="stylesheet" type="text/css">
     <link href='//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,200italic,300italic,400italic,600italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='//fonts.googleapis.com/css?family=Gentium+Basic:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <link href='//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
     {% feed_meta %}
     {% if site.comments.disqus and page.comments %}<script src="//{{ site.comments.disqus }}.disqus.com/embed.js" async></script>{% endif %}
     {% if site.comments.isso and page.comments %}<script data-isso="http://{{ site.comments.isso }}" src="//{{ site.comments.isso }}/js/embed.min.js"></script>{% endif %}
+    <link rel="stylesheet" src="redist/blockrain.css">
   </head>
   <body>
     <header>
-      {% unless site.style.headline %}<h1><a href="{{ site.baseurl }}/">{{ site.title }}</a></h1>{% endunless %}
+      {% unless site.style.headline %}<h1><a href="{{ site.baseurl }}/">{% include title.html %}</a></h1>{% endunless %}
       <nav>
         <ul>
-          <li><a href="{{ site.baseurl }}/">Home</a></li>{% for node in site.pages %}{% if node.title %}<li><a href="{{ node.url | prepend: site.baseurl }}"{% if page.url == node.url %} id="selected"{% endif %}>{{ node.title }}</a></li>{% endif %}{% endfor %}
+          <h4>{% assign sorted_pages = site.pages | sort:"order" %}
+          <li><a href="{{ site.baseurl }}/">Home</a></li>{% for node in sorted_pages %}{% if node.title %}<li><a href="{{ node.url | prepend: site.baseurl }}"{% if page.url == node.url %} id="selected"{% endif %}>{{ node.title }}</a></li>{% endif %}{% endfor %}</h4>
         </ul>
       </nav>
     </header>
@@ -29,9 +46,12 @@
     {% if site.subheading %}<div>{{ site.subheading }}</div>{% endif %}
 {{ content }}
     <footer>
-      <span><a href="{{ site.url }}">{% if page.author %}{{ page.author }}{% else %}{{site.author}}{% endif %}</a></span>
-      <span>{% for link_hash in site.links %}{% for link in link_hash %}<a href="{{ link[1] }}"><i class="fa fa-{{ link[0] }}-square"></i></a>{% endfor %}{% endfor %}</span>
-      <span>&copy; {{ site.time | date: "%Y" }}</span>
+    <ul>
+        <span><h5>{% include dywypi.html %} </h5> </span> <P>
+        <span>{% for link_hash in site.links %}{% for link in link_hash %}<a href="{{ link[1] }}"><i class="fa fa-{{ link[0] }}"></i></a>{% endfor %}{% endfor %}</span> <P>
+        <h5><span><a href="{{ site.url }}">{% if page.author %}{{ page.author }}{% else %}{{site.author}}{% endif %}</a></span>
+        <span>&copy; {{ site.time | date: "%Y" }}</span></h5>
+    </ul>
     </footer>
   </body>
 </html>

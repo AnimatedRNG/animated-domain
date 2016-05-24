@@ -1,6 +1,8 @@
 The MIT License (MIT)
 
-Copyright (c) 2015 Niklas Buschmann
+Copyright for portions of The Animated Domain are held by Niklas Buschmann, 2015
+as part of the Jekyll Contrast Theme. All other copyright for The Animated Domain
+are held by Srinivas Kaza, 2016
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

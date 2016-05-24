@@ -1,20 +1,20 @@
-title: "blog title"
-author: "Blog Author"
-description: "Really cool blog about ... something"
-#subheading: "Really cool blog about ... something"
+title: "The Animated Domain"
+condensed_title: "Animated Domain"
+author: "Srinivas Kaza"
+description: "Do you want your possessions identified?"
+#subheading: ""
 more: "read more"
-url: "http://niklabs.me"
-baseurl: "/contrast" # comment out if in root directory
+url: "http://kaza.io"
+baseurl: "/blog"
 
 comments:
-    disqus: "niklasbuschmann"
-#    isso: "comments.mysite.org"
+    disqus: "animateddomain"
 
 style:
 #    body: "whitesmoke"
     padding: 33%
     anchor: "#46f"
-    serif-heading: true
+    special-heading: true
     nav: "#181818"
 #    headline: "#06f"
     description: "white"
@@ -23,14 +23,10 @@ style:
         even: "#222222"
 
 links:
-  - github: "https://github.com/me/"
-  - twitter: "https://twitter.com/me/"
-  - google-plus: "https://plus.google.com/+me"
-  - reddit: "https://www.reddit.com/user/me/"
-  - youtube: "https://www.youtube.com/user/me"
-  - steam: "http://steamcommunity.com/id/me/"
+  - github-square: "https://github.com/AnimatedRNG"
+  - stack-overflow: "http://stackoverflow.com/users/498680/animatedrng"
 
 paginate: 10
-excerpt_separator: "\n\n\n" # excerpt ends after two blank lines
+excerpt_separator: "\n\n\n"
 defaults: [{scope: {path: ""}, values: {layout: "default"}}, {scope: {path: "", type: "posts"}, values: {comments: true}}]
-gems: [jekyll-feed] # include feed plugin (supported by gh-pages)
+gems: [jekyll-feed, jekyll-paginate]
