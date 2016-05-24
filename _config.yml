@@ -5,7 +5,7 @@ description: "Do you want your possessions identified?"
 #subheading: ""
 more: "read more"
 url: "http://kaza.io"
-baseurl: "/"
+baseurl: ""
 
 comments:
     disqus: "animateddomain"
