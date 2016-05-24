@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: http://kaza.io/sitemap.xml

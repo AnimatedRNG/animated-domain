@@ -29,4 +29,4 @@ links:
 paginate: 10
 excerpt_separator: "\n\n\n"
 defaults: [{scope: {path: ""}, values: {layout: "default"}}, {scope: {path: "", type: "posts"}, values: {comments: true}}]
-gems: [jekyll-feed, jekyll-paginate]
+gems: [jekyll-feed, jekyll-paginate, jekyll-sitemap]
