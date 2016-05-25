@@ -8,7 +8,7 @@ url: "http://kaza.io"
 baseurl: ""
 
 comments:
-    disqus: "animateddomain"
+    isso: "comments.kaza.io"
 
 style:
 #    body: "whitesmoke"
