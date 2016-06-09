@@ -26,6 +26,7 @@ links:
   - github-square: "https://github.com/AnimatedRNG"
   - stack-overflow: "http://stackoverflow.com/users/498680/animatedrng"
 
+markdown: kramdown
 paginate: 10
 excerpt_separator: "\n\n\n"
 defaults: [{scope: {path: ""}, values: {layout: "default"}}, {scope: {path: "", type: "posts"}, values: {comments: true}}]
