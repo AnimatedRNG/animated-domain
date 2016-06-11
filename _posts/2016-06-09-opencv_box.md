@@ -142,10 +142,8 @@ float bilateral_filter(
         if (value < zero_eps)
             continue;
             
-        const cv::Point spatial_diff(pos.x - box.tl().x,
-                                     pos.y - box.tl().y);
         const float spatial_term =
-            spatial_kernel[spatial_diff.x][spatial_diff.y];
+            normal_pdf(fast_dist(pos, center_pos), 0.0, _spatial_sigma);
         const float range_term =
             normal_pdf(value - center_value, 0.0, _range_sigma);
         w_p += spatial_term * range_term;
