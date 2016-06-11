@@ -156,7 +156,7 @@ float bilateral_filter(
 }
 ```
 
-This implementation uses a precomputed spatial kernel. It also ignores zeros.
+This implementation also ignores zeros.
 
 We call {% ihighlight c++ %}operate_neighborhood
 {% endihighlight %} on our mapping function to run the operation on our
