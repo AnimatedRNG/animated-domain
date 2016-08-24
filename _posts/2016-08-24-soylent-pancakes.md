@@ -87,8 +87,10 @@ If anything, you feel empty on the inside.
 # WARNING
 {: style="color: red; font-weight: bold; text-align: center; font-size: 500%;
 line-height: 0.01"}
+
 # MASSIVE SPOILERS AHEAD
 {: style="color:red; font-weight: bold; text-align: center; line-height: 0.01;"}
+
 ###### FOR ONE OF MY FAVORITE MOVIES OF ALL TIME
 {: style="color:red; font-weight: bold; text-align: center;"}
 
